@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Are you ready?</title>
+  <style>
+    :root { font-family: system-ui, Arial, sans-serif; }
+
+    /* Background image covers whole screen */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; 
+      margin: 0;
+      background: url('wallpaper.jpg') no-repeat center center/cover;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.9); /* semi-transparent for background visibility */
+      padding: 24px; border-radius: 16px;
+      box-shadow: 0 6px 24px rgba(0,0,0,.15);
+      width: min(520px, 92vw); 
+      text-align: center;
+    }
+
+    h1 { font-size: 1.6rem; margin: 0 0 20px; color: #d63384; }
+
+    .buttons {
+      display: flex; gap: 20px; justify-content: center; margin-bottom: 16px;
+      flex-wrap: wrap; /* makes them stack on smaller screens */
+    }
+
+    .btn {
+      padding: 14px 32px; border: none; border-radius: 12px;
+      background: #f8bbd0; color: #d63384; font-weight: 700;
+      font-size: 1rem; cursor: pointer; transition: background .2s, transform .1s;
+    }
+    .btn:hover { background: #f06292; color: #fff; }
+    .btn:active { transform: scale(0.97); }
+
+    .result { font-weight: 600; color: #d63384; font-size: 1.1rem; margin-bottom: 20px; }
+
+    /* Link section */
+    .link-section { margin-top: 20px; }
+    .link-btn {
+      padding: 10px 20px; border: none; border-radius: 10px;
+      background: #d63384; color: #fff; font-weight: 600;
+      text-decoration: none; display: inline-block;
+    }
+    .link-btn:hover { background: #a61c65; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>Are you ready for the Show?</h1>
+
+    <!-- <div class="buttons">
+      <button class="btn" onclick="choose('Yes')">Yes</button>
+      <button class="btn" onclick="choose('No')">No</button>
+    </div> -->
+
+    <div class="result" id="result"></div>
+
+    <!-- Section to attach/link another HTML file -->
+    <div class="link-section">
+      <a href="Page1/index.html" class="link-btn">Click Me</a>
+    </div>
+  </main>
+
+  <script>
+    function choose(answer) {
+      document.getElementById('result').textContent = `You chose: ${answer}`;
+    }
+  </script>
+</body>
+</html>
